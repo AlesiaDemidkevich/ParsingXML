@@ -85,7 +85,7 @@ namespace DataProcessorService.Services
             {
                 using var cmd = connection.CreateCommand();
                 cmd.CommandText = @"
-                INSERT INTO ModuleSates(ModuleCategoryID, ModuleState)
+                INSERT INTO ModuleStates(ModuleCategoryID, ModuleState)
                 VALUES($id, $state)
                 ON CONFLICT(ModuleCategoryID) DO UPDATE SET ModuleState = $state;";
                 cmd.Parameters.AddWithValue("$id", module.ModuleCategoryID);
