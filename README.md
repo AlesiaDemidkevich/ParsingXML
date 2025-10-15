@@ -173,7 +173,7 @@ dotnet run
 ```bash
 sqlite3 data.db
 .tables
-SELECT * FROM Modules;
+SELECT * FROM ModuleStates;
 ```
 
 ---
@@ -226,7 +226,7 @@ rabbitmqctl purge_queue xml_queue
 Проверить содержимое SQLite:
 ```bash
 sqlite3 data.db
-SELECT * FROM Modules;
+SELECT * FROM ModuleStates;
 ```
 
 ---
@@ -236,7 +236,7 @@ SELECT * FROM Modules;
 После успешного запуска:
 - **FileParserService** читает XML-файлы и публикует JSON в RabbitMQ.  
 - **DataProcessorService** принимает JSON и сохраняет данные в SQLite.  
-- В БД `data.db` таблица `Modules` содержит:
+- В БД `data.db` таблица `ModuleStates` содержит:
   - ModuleCategoryID  
   - ModuleState  
   - Timestamp
